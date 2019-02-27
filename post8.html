@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Joana Mota - Master Thesis Blog</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Joana Mota</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/week.png')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>Week 8 </h1>
+              <h2 class="subheading">Calibration of the Kinect and the laser sensor.</h2>
+              <span class="meta">Posted by
+                <a href="about.html">Joana Mota</a>
+                on April 19, 2018</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <font size="7"><b>Laser Sensor</b></font>
+            <p>Until now I have been using a 220&Omega; resistor to convert the current signal to voltage, but since 
+              the Arduino UNO has an operating voltage of 5V I calculated the appropriate
+              resistor to use the entire range, to do so I used the maximum current of the sensor(20mA). </p>
+            <p>\[R = {5V \over 0.02A} = 250&Omega; .\]</p>
+
+            <p>Knowing this, the circuit was changed to include a resistor of 250&Omega; .               
+            </p>
+            <center>
+              <p><img src="img/circuit_99,5Hz_250.jpeg" alt="" width="45%" height="45%"/>
+              <img src="img/circuit250.png" alt="" width="50%" height="50%"/></p>
+            </center>
+            <p>
+              Once again the entire process of gathering some analyses was redone and the next curve was acquired with the respective equation.
+            </p>
+            <center>
+              <p><img src="img/SensorCurveLowPassFilter100Hz_250.png" alt="" width="100%" height="100%"/>
+              </p>
+            </center>
+            <p>The Arduino UNO has analogue inputs of 10 bits which allows a resolution of 1024 values, and since 
+              the sensor was limited to a minimum of 100mm and a maximum of 500mm each value will represente a variation of 0.4mm.
+              Having this in mind the new circuit was tested and the results where satisfactory once again. However, the 
+              readings did not improved because 
+              they continue to oscillate between two values with a diference of 0.57mm. For example when measuring 250mm with 
+              the sensor the Arduino readings changed between the values of 250.21mm and 250.78mm. This can be explained
+              whit the fact that the sensor has a resolution analog output of 12 bits losing this way 2 bits when entering
+              the Arduino.
+            </p>
+
+            <font size="5"><b>Calibration</b></font>
+            <p>
+              The calibration of the laser sensor was carried on with the determination of the transformation from 
+              the coordinate system of the tip of the gripper to the coordinate system of the sender of the laser.
+              The process of determining if the angle of the sensor changes with the perpendicular movement of the robot's 
+              end effector was redone with more precision. When moving the end effector 518.39mm the laser moved 5.5mm, 
+              this represents that the laser shifts 0.6 degrees when it moves from 64mm to 580mm in relation to the table.
+              This offset is less than 1 degree so it's not going to be taken into account, at least for now. Afterwards the translation
+              of the X,Y and Z was calculated. To calculate the exact diference from the tip of the gripper to the laser in the Z axis
+              I gathered some readings from the laser when it is vertically pointing to the table, thus knowing the difference to the base 
+              of the robot. Then those where compared with the z-coordinate of the end effector read in the RVIZ. After gathering data
+              for different distances the average was calculated, hence having a 63.6mm diference from the sender of the laser to the 
+              tip of the gripper. In order to calculate the translation in the X and Y directions the gripper was replaced by a pencil 
+              and the difference to the laser beam was evaluated.</p>
+            <center>
+              <p><img src="img/calibration_pencil_sensor2.jpg" alt="" width="30%" height="30%"/>
+                <img src="img/calibration_pencil_sensor.jpg" alt="" width="30%" height="30%"/>
+              </p>
+            </center>
+            </p>
+            <p>
+              In the picture below it is possible to see that there is a difference of 47.8mm and 16.6mm in the X and Y direction, respectively.  
+            </p>
+            <center>
+              <p><img src="img/calibration_sensor_xy.jpg" alt="" width="45%" height="45%"/>
+              </p>
+            </center>
+
+            <p> 
+              Having already the transformation the URDF was changed, by altering the binpicking_robot_macro.xacro file and adding the 
+              binpicking_gripper_macro.xacro, in order to incorporate the 
+              coordinate system of the sender of the laser sensor. The STL of the device was also included for a better visualization.
+            </p>
+            <center>
+              <p>
+                <img src="img/sensorReferencial.png" alt="" width="45%" height="45%"/>
+                <img src="img/sensorReferencial2.png" alt="" width="45%" height="45%"/>
+              </p>
+             </center>
+            <font size="7"><b>Kinect</b></font>
+             <p>
+              The calibration of the Kinect was my next step this week. To do so the  
+              <a href="http://wiki.ros.org/visp_hand2eye_calibration">visp_hand2eye_calibration ROS package</a>
+              was used. This package is used to estimate the camera position with respect to its effector (the robot arm)
+              using the ViSP library. To compute the relative transformation between the the camera and the hand it is necessary
+              to fed the calibrator node with the /world_effector and the /camera_object transformations. This last one 
+              is calculated using an aruco and the    
+              <a href="http://wiki.ros.org/aruco_detect">aruco_detect</a> package which detects the pose of aruco markers, and this process
+              can be visualized in the picture below.
+            </p>
+            <center>
+             <p><img src="img/calibration_aruco_detect.png" alt="" width="55%" height="55%"/>
+             </p>
+            </center>
+            <p>
+              To use this package it is necessary to install the fiducial software from binary packages using the 
+              following command.
+            </p>
+            <p>
+              <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">sudo apt-get install ros-kinetic-fiducials</pre></div>
+            </p>  
+            <p>
+              This calibration process is easily visualized in the scheme bellow.
+            </p>
+              <center>
+              <p><img src="img/transformations_robot_Kinect.png" alt="" width="80%" height="80%"/>
+              </p>
+            </center>
+            <p>
+              For this calibration to work, the creation of a client, which feeds different 
+              transformations to the calibrator responsible for computing the relative 
+              transformation between the the camera and the hand from a few poses, is fundamental. The camera_calibration_client.py program,
+              present in the <i>calibration</i> file, is responsible for executing this process and printing the /effector_camera transformation
+              in the xyz(transformation) and rpy(rotation) format. With this it is possible to visualize the tree of the transformations 
+              of the entire system.
+              </p>
+              <center>
+                <p><img src="img/frames_tree2.png" alt="" width="90%" height="90%"/>
+                </p>
+              </center>
+              <p>
+                In order to visualize the robot, the Kinect, the laser sensor and all the associated coordinate systems, the URDF model
+                of the entire system was changed, by altering the binpicking_macro.xacro file to incorporate the Kinect. 
+                All the components can be visualized and analysed live by running the next command.
+              </p>
+              <p>
+                <div style="background: #f0f0f0; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">roslaunch bin_picking global_state_visualize.launch</pre></div>
+              </p> 
+            <center>
+              <p><img src="img/global_state2.gif" alt="" width="55%" height="55%"/>
+              </p>
+            </center>
+
+            <p>
+              While using the RobComm language to send commands to move the robot, I observed that the origin in the base_link
+              differs from the one visualized in RVIZ with the URDF of the FANUC robot. Besides the X and Y coordinate being almost
+              the same, the Z-coordinate has a gap of 162.5mm. Hence, when moving the robot to a desired point I will have to take this aspect
+              into consideration, when using the RobComm language.
+            </p>
+            <center>
+              <p><img src="img/robcommADNfanuc.png" alt="" width="110%" height="110%"/>
+              </p>
+            </center>
+
+            <!-- Pager -->
+            <div class="clearfix">
+              <a class="btn btn-primary float-left" href="post7.html">&larr;Previous Week </a>
+              <a class="btn btn-primary float-right" href="post9.html">Next Week &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/joana.mota.9279">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/JoanaMota/Bin-picking">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
+
+</html>

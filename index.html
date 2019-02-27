@@ -1,183 +1,378 @@
 <!DOCTYPE html>
+<!-- include the HTML5 doctype at the beginning of the page -->
 <html lang="en">
 
-<head>
+  <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <!-- To ensure proper rendering and touch zooming: -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>Clean Blog - Start Bootstrap Theme</title>
+    <title>Joana Mota - Master's Thesis Blog</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+      
+      <!-- Custom fonts for this template -->
+      <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+      
 
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+      <!-- Custom styles for this template -->
+      <link href="css/clean-blog.min.css" rel="stylesheet">
+    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 
-  <!-- Custom styles for this template -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
+    <style>
+      .element {
+        position: sticky; 
+        top: 80px;
+      }
+    </style>
+  </head>
 
-</head>
+  <body>
 
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post.html">Sample Post</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Joana Mota</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Bin-picking</h1>
+              <span class="subheading">My Master's Thesis Blog</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Man must explore, and this is exploration at its greatest
-            </h2>
-            <h3 class="post-subtitle">
-              Problems look mighty small from 150 miles up
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-            </h2>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on September 18, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Science has not yet mastered prophecy
-            </h2>
-            <h3 class="post-subtitle">
-              We predict too much for the next year and yet far too little for the next ten.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on August 24, 2019</p>
-        </div>
-        <hr>
-        <div class="post-preview">
-          <a href="post.html">
-            <h2 class="post-title">
-              Failure is not an option
-            </h2>
-            <h3 class="post-subtitle">
-              Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-            </h3>
-          </a>
-          <p class="post-meta">Posted by
-            <a href="#">Start Bootstrap</a>
-            on July 8, 2019</p>
-        </div>
-        <hr>
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
+    <!-- Main Content -->
+    <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <ul class="list-inline text-center">
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <span class="fa-stack fa-lg">
-                  <i class="fas fa-circle fa-stack-2x"></i>
-                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+            <h2 class="section-heading">Precise Bin-picking using a 3D Sensor and a 1D Laser Sensor</h2>
+          <p>Bin-picking is the name of the technique used by a robot to grasp objects that are randomly disposed inside a box or on a pallet.</p>
+          <p>My purpose with this thesis is to develop a solution for a different process of bin-picking using a 3D sensor to generate a point cloud of the objects, and a 1D laser sensor to correctly determinate the exact coordinates of the grasping point.</p>
         </div>
       </div>
     </div>
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Main Content -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 mx-auto" style="background-color:rgba(0,128,128, 0.099);">
+          <div class="post-preview">
+            <a href="post.html">
+              <h2 class="post-title">
+                Week 0 | (19/02 - 25/02)
+              </h2>
+              <h3 class="post-subtitle">
+              <ul>
+                  <li>ROS Installation and tutorials.</li>
+              </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on March 12, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post1e2.html">
+              <h2 class="post-title">
+                Week 1-2 | (26/02 - 11/03)
+              </h2>
+              <h3 class="post-subtitle">
+               <ul>
+                  <li>ROS Workshop.</li>
+                  <li>Preliminary Report.</li>
+                </ul> 
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on March 12, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post3.html">
+              <h2 class="post-title">
+                Week 3 | (12/03 - 18/03)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Presentation for the first LAR Meeting.</li>
+                  <li>Research for the state of the art.</li>
+                  <li>First data acquisition from the Kinect.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on March 18, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post4.html">
+              <h2 class="post-title">
+                Week 4 | (19/03 - 25/03)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Continuation of the research for the state of the art.</li>
+                  <li>Developments on the installation of the laser sensor.</li>
+                  <li>Conduction of a few tests for the different installation positions of the Kinect in the robot.</li>
+                  <li>Segmentation of the data acquired from the Kinect.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on March 25, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post5e6.html">
+              <h2 class="post-title">
+                Week 5-6 | (26/03 - 5/04)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Installation of the laser sensor and processing its output signal.</li>
+                  <li>Calibration of the Kinect.</li>
+                  <li>Processing of the data acquired from the Kinect to determine the centroid of an object and its normal.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on April 5, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post7.html">
+              <h2 class="post-title">
+                Week 7 | (6/04 - 12/04)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Support for the Kinect.</li>
+                  <li>Changes on the circuit to filter the laser sensor readings.</li>
+                  <li>Beginning of the calibration of all the hardware utilized.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on April 12, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post8.html">
+              <h2 class="post-title">
+                Week 8 | (13/04 - 19/04)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Calibration of the Kinect and the laser sensor.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on April 19, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+              <a href="post9.html">
+                <h2 class="post-title">
+                  Week 9 | (20/04 - 26/04)
+                </h2>
+                <h3 class="post-subtitle">
+                  <ul>
+                    <li>Point Cloud Segmentation.</li>
+                  </ul>
+                </h3>
+              </a>
+              <p class="post-meta">Posted by
+                <a href="about.html">Joana Mota</a>
+                on April 26, 2018</p>
+            </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post10.html">
+              <h2 class="post-title">
+                Week 10 | (26/04 - 2/05)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Evaluation of the Kinect calibration.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on May 2, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post11.html">
+              <h2 class="post-title">
+                Week 11 | (2/05 - 10/05)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Correct calibration of the Kinect.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on May 10, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post12,13e14.html">
+              <h2 class="post-title">
+                Week 12-13-14-15 | (21/05 - 13/06)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>System Integration.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on September 16, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post16.html">
+              <h2 class="post-title">
+                Week 16 | (21/06 - 28/06)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Tests.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on September 19, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+            <a href="post16.html">
+              <h2 class="post-title">
+                Week 17 | (2/07 - 9/07)
+              </h2>
+              <h3 class="post-subtitle">
+                <ul>
+                  <li>Demonstration.</li>
+                </ul>
+              </h3>
+            </a>
+            <p class="post-meta">Posted by
+              <a href="about.html">Joana Mota</a>
+              on October 7, 2018</p>
+          </div>
+          <!-- Pager -->
+          <!-- <div class="clearfix">
+            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          </div> -->
+        </div>
+        <div class="col-sm-6" style="background-color:rgba(255, 255, 0, 0.099);">
+            <div class="element">
+                <h2 class="post-title">
+                  Demonstration of the developed Bin-picking process.
+                </h2>
+                <iframe width="650" height="340"
+                 src="https://www.youtube.com/embed/8bcPk6gX0Rg?autoplay=1&loop=1&playlist=8bcPk6gX0Rg">
+                 </iframe> 
+           </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/clean-blog.min.js"></script>
+    <hr>
 
-</body>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!-- <li class="list-inline-item">
+                <a href="#">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li> -->
+              <li class="list-inline-item">
+                <a href="https://www.facebook.com/joana.mota.9279">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/JoanaMota/Bin-picking">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Your Website 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+  </body>
 
 </html>
