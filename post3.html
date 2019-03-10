@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tiago Tavares - Master's Thesis Blog</title>
+  <title>Tiago Tavares - Master Thesis Blog</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,39 +55,75 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/aboutme.png')">
+  <header class="masthead" style="background-image: url('img/week.png')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>Sobre mim</h1>
+          <div class="post-heading">
+            <h1>Week 3</h1>
+            <h2 class="subheading">LAR meeting e inicio do projeto </h2>
+            <span class="meta">Posted by
+              <a href="about.html">Tiago Tavares</a>
+              on March 10, 2019</span>
           </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <p>O meu nome é Tiago Tavares, sou estudante de Mestrado Integrado de Engenharia Mecânica, na Universidade de
-          Aveiro. Podem aceder ao meu perfil no Facebook ou Github no rodapé da pagina, ou ao meu LinkedIn através do
-          link <a href="https://www.linkedin.com/in/tiagoatavares/">https://www.linkedin.com/in/tiagoatavares/</a> </p>
-        <p>Este blogue tem como propósito, retratar as tarefas realizadas semanalmente, durante o período de
-          dissertação. </p>
-        <p> O objetivo do projeto consiste em integrar, em abiente ROS, duas dissertações independentes já realizadas,
-          das quais resultaram:
-          <p> - Uma plataforma semi-autonoma (com possibilidade de ser tele-operada) </p>
-        </p> - Um manipulador robótico que realiza o bin-picking com precisão. </p>
-        </p> ... </p>
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Parte desta semana foi dedicada à preparação da apresentação, para o primeiro LAR Meeting realizado a 8 de
+            Março. Todos os membros do LAR apresentaram os temas das suas dissertações e respetivos desafios a
+            ultrapassar ao longo do semestre.</p>
+
+          <p>Paralelamente à tarefa anterior, comecei a implementar as ferramentas deixadas pelo Luís Sarmento de modo a
+            colocar a plataforma móvel funcional. Visto que a versão de ROS utilizada pelos alunos do ano passado era a
+            Kinetic, este ano será necessário que os alunos migrem para uma nova versão, ROS Melodic. </p>
+
+          <p>Como o Luís, deixou o ubuntu 16 e o ROS Kinetic no mini-pc da plataforma, iniciei a instalação nessas
+            mesmas versões de modo a perceber se havia alguma falha/problema. Posteriormente, iniciei a instalação no
+            meu computador pessoal, no qual tenho o Ubuntu 18 e ROS Melodic.
+            Como existiu algumas alterações significativas de uma versão para outra, esta migração não foi tão fácil
+            como esperava. </p>
+
+          <!-- <img class="img-fluid" src="img/arena.png" alt="">
+            <p>In the link below it is possible to see a video of the last game played by all of the participants.</p>
+            <p><a href="https://www.youtube.com/watch?v=ja2APGL8PsA">https://www.youtube.com/watch?v=ja2APGL8PsA</a>.
+            <p>This workshop was also helpful to increase my skills using the GitHub platform. </p> -->
+
+          <p>Apresento de seguida os problemas encontrados ao longo da semana:
+            <li> Alguns packages necessários não estão disponíveis para a versão Melodic, então tive que realizar a
+              instalação pelos repositorios do GitHub.
+            <li>A maioria dos packages não estão concessionados como deveriam de estar, uma vez que necessitam de
+              ficheiros gerados por outros packages, e quando a sua compilação estes não avisam de qualquer dependência
+              de outro. Assim foi necessário, compilar os packages com uma ordem especifica de modo a não dar qualquer
+              tipo de erro de compilação. </li>
+            <li>Depois de tudo compilado, após a execução destes houve alguns erros de passagem do argumento “/map”, no
+              qual foi necessário alterar alguns ficheiros de configuração “.yalm” .
+          </p>
+
+          <p>Depois de tudo isto, consegui colocar a plataforma em movimento com o meu computador pessoal, e
+            tele-opera-la. Encontrei alguns bugs que necessito de resolver na próxima semana. </p>
+
+
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-left" href="post1e2.html">&larr;Semana anterior</a>
+            <a class="btn btn-primary float-right" href="post4.html">Proxima semana &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </article>
 
   <hr>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
