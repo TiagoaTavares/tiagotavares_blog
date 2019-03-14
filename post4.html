@@ -62,10 +62,10 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1>Week 3</h1>
-            <h2 class="subheading">LAR meeting e inicio do projeto </h2>
+            <h2 class="subheading">Conclusão da configuração da plataforma móvel & Inicio da configuração das ferramentas para o bin-picking </h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Tavares</a>
-              on March 10, 2019</span>
+              on March 14, 2019</span>
           </div>
         </div>
       </div>
@@ -77,44 +77,21 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Parte desta semana foi dedicada à preparação da apresentação para o primeiro LAR Meeting, realizado a 8 de
-            Março. Todos os membros do LAR apresentaram os temas das suas dissertações e respetivos desafios a
-            ultrapassar ao longo do semestre.</p>
+          <p>Iniciei esta semana com a correção dos bugs constatados na semana anterior, maioritariamente no modo automatico. Para o efeito, foi necessário a realização de alguns tutorias para melhor perceção do pacote usado na navegação automatica. <p>
 
-          <p>Paralelamente à tarefa anterior, comecei a implementar as ferramentas deixadas pelo Luís Sarmento de modo a
-            colocar a plataforma móvel funcional. Visto que a versão de ROS utilizada pelos alunos do ano passado era a
-            Kinetic, este ano será necessário que os alunos migrem para uma nova versão, ROS Melodic. </p>
+          <p>Após este desafio estar concluído, passei então, para a compreensão e configuração do manipulador Fanuc para bin-picking.<p>
 
-          <p>Como o Luís deixou o ubuntu 16 e o ROS Kinetic no mini-pc da plataforma, iniciei a instalação nessas
-            mesmas versões de modo a perceber se havia alguma falha/problema, antes da migração. Posteriormente, iniciei a instalação no
-            meu computador pessoal, no qual tenho o Ubuntu 18 e ROS Melodic.
-            Como existiu algumas alterações significativas de uma versão para outra, esta migração não foi tão fácil
-            como esperava. </p>
+          <p>Comecei por tentar perceber a metodologia usada pela Joana Mota, e iniciei a instalação dos pacotes necessários para o uso da kinect, manipulador Fanuc, bem como os pacotes necessários para a calibração da camara. <p>
 
-          <!-- <img class="img-fluid" src="img/arena.png" alt="">
-            <p>In the link below it is possible to see a video of the last game played by all of the participants.</p>
-            <p><a href="https://www.youtube.com/watch?v=ja2APGL8PsA">https://www.youtube.com/watch?v=ja2APGL8PsA</a>.
-            <p>This workshop was also helpful to increase my skills using the GitHub platform. </p> -->
+          <p>Devido às dificuldades inerentes a esta tarefa, necessito de realizar alguns tutoriais de modo a compreender melhor alguns conceitos fundamentais, tais como tf’s,  Unified Robot Description Format (URDF) , e posteriormente do moveit. </p>
 
-          <p>Apresento de seguida os problemas encontrados ao longo da semana:
-            <li> Alguns packages necessários não estão disponíveis para a versão Melodic, então tive que realizar a
-              instalação pelos repositorios do GitHub.
-            <li>A maioria dos packages não estão concessionados como deveriam de estar, uma vez que necessitam de
-              ficheiros gerados por outros packages, e quando a sua compilação estes não avisam de qualquer dependência
-              de outro. Assim foi necessário, compilar os packages com uma ordem especifica de modo a não dar qualquer
-              tipo de erro de compilação. </li>
-            <li>Depois de tudo compilado, após a execução destes houve alguns erros de passagem dos argumentos “/map” e "/laser", no
-              qual foi necessário alterar todos os frames_id's nos ficheiros “.yalm” . De acordo com esta inssue, https://github.com/ros-drivers/nmea_navsat_driver/issues/24 , os frames_id 's no pacote tf2 podem dar conflito caso sejam antecedidos por "\" .
-          </p>
-
-          <p>Após ultrapassar estes problemas, consegui colocar a plataforma em movimento com o meu computador pessoal, e
-            tele-opera-la. Encontrei alguns bugs que necessito de resolver na próxima semana, nomeadamente o modo automático não funcional. </p>
-
+          <p> De modo a facilitar trabalhos futuros e a utilização do presente código, atualizei o repositorio do GitHub e consequentemente o ficheiro Readme com todas as tarefas necessárias ao setup, bem como a solução de todos os erros encontrados durante o procedimento. Pode-se pre-visualizar o ficheiro em :
+          <a href="https://github.com/TiagoaTavares/Robonuc"> https://github.com/TiagoaTavares/Robonuc</a>.</p>
 
           <!-- Pager -->
           <div class="clearfix">
-            <a class="btn btn-primary float-left" href="post1e2.html">&larr;Semana anterior</a>
-            <a class="btn btn-primary float-right" href="post4.html">Proxima semana &rarr;</a>
+            <a class="btn btn-primary float-left" href="post3.html">&larr;Semana anterior</a>
+            <!-- <a class="btn btn-primary float-right" href="post5.html">Proxima semana &rarr;</a> -->
           </div>
         </div>
       </div>
