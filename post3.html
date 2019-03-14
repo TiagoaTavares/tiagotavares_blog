@@ -85,8 +85,14 @@
             colocar a plataforma móvel funcional. Visto que a versão de ROS utilizada pelos alunos do ano passado era a
             Kinetic, este ano será necessário que os alunos migrem para uma nova versão, ROS Melodic. </p>
 
+          <p> Plataforma móvel: </p>
+          <center>
+            <p><img src="img/robuter.jpg" alt="" width="70%" height="70%" /></p>
+          </center>
+
           <p>Como o Luís deixou o ubuntu 16 e o ROS Kinetic no mini-pc da plataforma, iniciei a instalação nessas
-            mesmas versões de modo a perceber se havia alguma falha/problema, antes da migração. Posteriormente, iniciei a instalação no
+            mesmas versões de modo a perceber se havia alguma falha/problema, antes da migração. Posteriormente, iniciei
+            a instalação no
             meu computador pessoal, no qual tenho o Ubuntu 18 e ROS Melodic.
             Como existiu algumas alterações significativas de uma versão para outra, esta migração não foi tão fácil
             como esperava. </p>
@@ -103,19 +109,36 @@
               ficheiros gerados por outros packages, e quando a sua compilação estes não avisam de qualquer dependência
               de outro. Assim foi necessário, compilar os packages com uma ordem especifica de modo a não dar qualquer
               tipo de erro de compilação. </li>
-            <li>Depois de tudo compilado, após a execução destes houve alguns erros de passagem dos argumentos “/map” e "/laser", no
-              qual foi necessário alterar todos os frames_id's nos ficheiros “.yalm” . De acordo com esta inssue, https://github.com/ros-drivers/nmea_navsat_driver/issues/24 , os frames_id 's no pacote tf2 podem dar conflito caso sejam antecedidos por "\" .
+            <li>Depois de tudo compilado, após a execução destes houve alguns erros de passagem dos argumentos “/map” e
+              "/laser", no
+              qual foi necessário alterar todos os frames_id's nos ficheiros “.yalm” . De acordo com esta inssue,
+              https://github.com/ros-drivers/nmea_navsat_driver/issues/24 , os frames_id 's no pacote tf2 podem dar
+              conflito caso sejam antecedidos por "\" .
           </p>
 
-          <p>Após ultrapassar estes problemas, consegui colocar a plataforma em movimento com o meu computador pessoal, e
-            tele-opera-la. Encontrei alguns bugs que necessito de resolver na próxima semana, nomeadamente o modo automático não funcional. </p>
+          <p>Paralelamente necessitei de verificar se os erros/bugs encontrados com o meu PC pessoal também ocorriam no
+            mini-PC, uma vez que este tinha a versão antiga de ROS usada pelo Luís.
+            Uma vez que a alimentação concebida para a alimentação do mini-PC era demasiado elevado , foi necessário
+            encontrar uma alternativa. Deste modo, utilizou-se um conversor DC-AC que necessita como input de 10-15 V e
+            devolve 230 AC. Como o acesso às baterias do robuter estava limitado e a sua implementação poderia demorar
+            algum tempo, utilizou-se 2 baterias (12V) externas ligadas em paralelo, como se pode ver na seguinte figura:
+            <p>
+
+              <center>
+                <p><img src="img/alimentacao_robuter.jpg" alt="" width="70%" height="70%" /></p>
+              </center>
+
+              <p>Após ultrapassar estes problemas, consegui colocar a plataforma em movimento com o meu computador
+                pessoal,
+                e tele-opera-la. Encontrei alguns bugs que necessito de resolver na próxima semana, nomeadamente o modo
+                automático não funcional. </p>
 
 
-          <!-- Pager -->
-          <div class="clearfix">
-            <a class="btn btn-primary float-left" href="post1e2.html">&larr;Semana anterior</a>
-            <a class="btn btn-primary float-right" href="post4.html">Proxima semana &rarr;</a>
-          </div>
+              <!-- Pager -->
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="post1e2.html">&larr;Semana anterior</a>
+                <a class="btn btn-primary float-right" href="post4.html">Proxima semana &rarr;</a>
+              </div>
         </div>
       </div>
     </div>
