@@ -62,11 +62,10 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1>Week 4</h1>
-            <h2 class="subheading">Conclusão da configuração da plataforma móvel & Inicio da configuração das
-              ferramentas para o bin-picking </h2>
+            <h2 class="subheading">Conclusão da configuração do manipulador para bin-picking & Montagem ROBONUC & Inicio do modelo URDF </h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Tavares</a>
-              on March 14, 2019</span>
+              on March 21, 2019</span>
           </div>
         </div>
       </div>
@@ -78,43 +77,50 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Iniciei esta semana com a correção dos bugs constatados na semana anterior, maioritariamente no modo
-            automatico. Para o efeito, foi necessário a realização de alguns tutorias para melhor perceção do pacote
-            usado na navegação automatica. <p>
+          <p>Depois da montagem do hardware e da instalação de todo o software necessário à realização do bin-picking
+            com precisão, consegui reproduzir a tarefa pretendida com sucesso. Devido à impossibilidade de comunicação
+            por Modbus com o manipulador, foi necessário desenvolver um sistema independente que permitisse controlar os
+            IO’s. Deste modo, em anos anteriores desenvolveu-se um sistema com um arduíno que comunica com por tcp/ip
+            com o PC e que atua diretamente as entradas do controlador. Com um auxilio da função “BackGround Logic”
+            existe um programa que está constantemente a verificar essas entradas, e ativa ou desativa o gripper.
+            Alguma falta de documentação relativa a este sistema, dificultou o “debug” do problema… Para tentativa de
+            resolução do problema realizei um programa simples em Python que me permitisse apenas ativar/ desativar o
+            grpper. Deste modo tive o primeiro contacto com a linguagem Python ou que será uma mais valia uma vez que a
+            a Joana Mota deixou algumas ferramentas nessa linguagem… <p>
 
-              <p>Após este desafio estar concluído, passei então, para a compreensão e configuração do manipulador Fanuc
-                para bin-picking.<p>
+              <p>Após a instalação e nacionalização quer do manipulador, quer da plataforma móvel, foi necessário a
+                montagem dos 2 sistemas, para a formação do ROBONUC. A figura seguinte mostra o estado atual do sistema,
+                após a montagem: <p>
 
-                  <p>Comecei por tentar perceber a metodologia usada pela Joana Mota, e iniciei a instalação dos pacotes
-                    necessários para o uso da kinect, manipulador Fanuc, bem como os pacotes necessários para a
-                    calibração da camara. Depois de montar o hardware, foi possivel obter a sua vizualização em rviz:
-                    <p>
-
-                      <center>
-                        <p><img src="img/first_aquisition.jpg" alt="" width="70%" height="50%" /></p>
-                      </center>
-
-                      <center>
-                        <p><img src="img/first_aquisition_2.png" alt="" width="110%" height="110%" /></p>
-                      </center>
-
+                  <center>
+                    <p><img src="img/robonuc_montagem_2fotos.png" alt="" width="85%" height="60%" /></p>
+                  </center>
 
 
-                      <p>Devido às dificuldades inerentes à compreensão de alguns conceitos, necessito de realizar
-                        alguns tutoriais de modo a compreender melhor alguns conceitos fundamentais, tais como tf’s,
-                         Unified Robot Description Format (URDF) , e posteriormente do moveit. </p>
+                  <p>Posto isto, iniciei o modelo URDF da plataforma, uma vez que este ainda não foi efetuado... A
+                    tentava começou primeiro pela compreensão dos conceitos inerentes, pela analise de alguns excertos
+                    de URDF deixados por antigos alunos, e pela obtenção do modelo URDF através de um “add on” ao
+                    solidworks. O estado atual do modelo pode ser visualizado na seguinte figura: </p>
 
-                      <p> De modo a facilitar trabalhos futuros e a utilização do presente código, atualizei o
-                        repositorio do GitHub e consequentemente o ficheiro Readme com todas as tarefas necessárias ao
-                        setup, bem como a solução de todos os erros encontrados durante o procedimento. Pode-se
-                        pre-visualizar o ficheiro em :
-                        <a href="https://github.com/TiagoaTavares/Robonuc">
-                          https://github.com/TiagoaTavares/Robonuc</a>.</p>
+                  <center>
+                    <p><img src="img/urdf_atual0.png" alt="" width="85%" height="60%" /></p>
+                  </center>
+
+                  <p> Este modelo, a meu ver, apresenta vários problemas uma vez que a modelação da plataforma tem
+                    alguns componentes agrupados num só. Isto é, as rodas estão agrupadas com a base da plataforma num
+                    só componente, ou seja as as rodas não estão associadas a qualquer tipo de junta, individualmente.
+                    Este “problema” pode-se vir a refletir na associação do modelo total (integrado) ao Moveit.
+                    Assim, de modo a perceber se esta situação poderá ou não causar problemas, acho por bem,
+                    familiariza-me melhor com a ferramenta MoveIt. Para tal, iniciarei tutoriais relativos a esta
+                    ferramenta…</p>
+
+                  <p>Paralelamente às tarefas referidas anteriormente, inicializei a escrita e organização da
+                    dissertação.<p>
 
                       <!-- Pager -->
                       <div class="clearfix">
-                        <a class="btn btn-primary float-left" href="post3.html">&larr;Semana anterior</a>
-                        <a class="btn btn-primary float-right" href="post5.html">Proxima semana &rarr;</a>
+                        <a class="btn btn-primary float-left" href="post4.html">&larr;Semana anterior</a>
+                        <!-- <a class="btn btn-primary float-right" href="post6.html">Proxima semana &rarr;</a> -->
                       </div>
         </div>
       </div>
