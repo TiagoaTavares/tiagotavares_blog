@@ -62,7 +62,8 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1>Week 6</h1>
-            <h2 class="subheading"> Inicio da implementação da arquitetura ROS para a integração ROBONUC </h2>
+            <h2 class="subheading"> Servidor de ações para modos de funcionamento && Inicio do Modo3: Orientação da
+              plataforma para picking </h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Tavares</a>
               on April 04, 2019</span>
@@ -77,42 +78,46 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p>Iniciei esta semana com a implementação da arquitetura ROS discutida na ultima reunião semanal. A
-            arquitetura implementada, sem o modo automático (Navigation), pode ser visualizada na seguinte imagem: <p>
+          <p>Decidiu-se que o Robonuc iria ter 4 modos de funcionamento: Modo 0 para o modo off; Modo 1 para Navegação
+            (manipulador recolhido); Modo 2 para aproximação “automatica” da mesa para executar o Bin-Picking; Modo 3
+            para orientação da plataforma móvel face à bancada ; Modo 4 para iniciar o Bin-Picking.
+            Para implementar esses modos, foi necessário criar um servidor de ações, em que dependendo do “goal” pedido
+            pelo cliente, o servidor executa movimentos do manipulador Fanuc para posições predefinidas em cada modo.
+            Depois de algumas tentativas de implementação das funções do Moveit em c++, achou-se por bem utilizar essas
+            mesmas funções em python. Deste modo, o próprio servidor de ações teria, também, de ser em python. A
+            dificuldade de implementação de ações, com o uso de uma nova linguagem dificultou um pouco esse processo.
+            Após este servidor estar funcional, foi necessario alterar o nó “integrated_referee” para este ser um
+            cliente de ações, e assim comutar o estado do manipulador consoante a tarefa necessária. <p>
+
+              <p>Deste modo a partir do momento em que o tele operador pressiona a tecla A, o ROBONUC procura uma
+                superfície com base no laser 1D localizado na sua junta 6. Após essa deteção posiciona-se de modo
+                automático para posterior correção da orientação da plataforma face a mesa. Este processo pode ser
+                visualizado no seguinte vídeo: </p>
 
               <center>
-                <p><img src="img/arquietura_aproximaçao1.png" alt="" width="120%" height="95%" /></p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-yI_CdkiqHM" frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
               </center>
 
-              <p>Foi então criado um nó sensorRS232_v2 ( “v2” para não confundir com outro nó utilizado no bin picking )
-                para estar constantemente a publicar as leituras no tópico /output_laser_sensor., e um nó que verifica o
-                alcance do laser “check_feasibility” e publica uma mensagem no tópico /feasibitity, que pode ser:
-                "Platform should move." ou "Platform should stop." O limiar utilizado por este nodo é carregado através
-                do ficheiro “checker_params.yaml”, o que possibilita a troca do limiar sem haver a necessidade de
-                compilação.
-                Posto isto foi criado um nodo denominado por “integrated_referee” que subscreve os botes do joystick
-                (/joy) e o tópico /feasibitity de modo a decidir se pode ou não mover a plataforma. Para isso é
-                necessário enviar a mensagem para o tópico /navi_comands com a velocidade linear e angular desejada.
-                Para ver a arquitetura total com o modo automático incorporado, sugiro a visualização neste link para
-                melhor perceção: https://ibb.co/1d3ht9f <p>
 
-                  <p>Após a tentativa de implementação da arquitetura desenvolvida, surgiu um problema que importa
-                    salientar. Uma vez que existem 3 laseres que trabalhavam de forma independente (2 para a plataforma,
-                    1 para o manipulador), existiam conflitos que se deviam à leitura correta dos lasers, ou seja
-                    existia uma falsa correspondência para a porta escolhida e o laser que realente se queria ler. </p>
 
-                  <p>Durante a semana, tive uma reunião com investigador Rafael Lírio Arrais, do departamento de
-                    robótica do inesctec, que serviu para discutir alguns projetos realizados pelo o mesmo, na área de
-                    manipulação móvel para a industria. </p>
+              <p>Assim sendo, iniciei um nova etapa do projeto: correção da orientação da plataforma usando a câmara e
+                um aruco. Para melhor perceção apresenta-se a seguinte seguinte imagem do estado atual do projeto: </p>
 
-                </p>Paralelamente às tarefas anteriores, continuei a investigar métodos e estratégias para implementação
-                da cinemática integrada do ROBONUC.</p>
+              <center>
+                <p><img src="img/Start_plataform_orientation.png" alt="" width="140%" height="120%" /></p>
+              </center>
 
-              <!-- Pager -->
-              <div class="clearfix">
-                <a class="btn btn-primary float-left" href="post6.html">&larr;Semana anterior</a>
-                <a class="btn btn-primary float-right" href="post8.html">Proxima semana &rarr;</a>
-              </div>
+            </p>Como se pode ver na imagem, é apresentado um referencial no aruco detetado pela kinect, e processado por
+            um package especifico “fiducials”. Neste momento iniciei uma nova ação, de modo a executar este processo de
+            correção de orientação para posterior execução do Bin-Picking. </p>
+            
+          <!-- Pager -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-left" href="post7.html">&larr;Semana anterior</a>
+            <!-- <a class="btn btn-primary float-right" href="post8.html">Proxima semana &rarr;</a> -->
+          </div>
         </div>
       </div>
     </div>
