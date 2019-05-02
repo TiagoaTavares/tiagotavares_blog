@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Tiago Tavares - Master Thesis Blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Tiago Tavares</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/week.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>Week 9 e 10 </h1>
+            <h2 class="subheading"> Criação de ações para aproximação, orientação e BinPicking && Alteração de nós e
+              Criação de serviços && Escrita dissertação </h2>
+            <span class="meta">Posted by
+              <a href="about.html">Tiago Tavares</a>
+              on April 25, 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p> Neste semana foi dedicado mais tempo à escrita da dissertação. O estrutura da dissertação , bem como os
+            cap 1 e 2 foram entregues para revisão, e os cap 3 e 4 estão quase terminados.<p>
+
+              <p>Esta semana foi efetuada a montagem/instalação do inversor de corrente de modo a dar autonomia ao nosso
+                robô móvel. Para o efeito, foi necessário uma revisão e implementação de um novo layout de modo a
+                conseguir otimizar espaço, e organizar todos os componentes. O estado final do equipamento pode ser
+                visualizado nas seguintes imagens:</p>
+
+              <center>
+                <p><img src="img/nova_montagem_1.jpg" alt="" width="100%" height="100%" /></p>
+              </center>
+
+              <center>
+                <p><img src="img/nova_montagem_2.jpg" alt="" width="100%" height="100%" /></p>
+              </center>
+
+              <p>Após a sua montagem prosseguiu-se para alguns testes de funcionamento, nos quais houve insucesso.
+                Detetou-se que durante a montagem houve danificação do circuito elétrico necessário à aquisição do laser
+                1D presente no gripper do manipulador.</p>
+
+              <p>Após a sua resolução, percebeu-se que o inversor de corrente teria influencia na alimentação de um
+                laser 2D presente na plataforma, ou seja caso o inversor esteja ligado o laser não cumpre as suas
+                funções. Não se percebe bem a causa da corrente uma vez que não existe variação de tensão, nem de
+                corrente quando existe comuta de estado do inversor. Uma vez que estas medições foram realizadas com um
+                multímetro as variações de amperagem podem não ser percetíveis. De modo a solucionar o problema, irá ser
+                aplicado um conversor de corrente de modo a alimentar o laser pela saída do inversor. </p>
+
+              <p> Contudo, foram realizados alguns testes e algumas alterações no processo de “auto-picking”, sendo já
+                possível o cancelamento de movimento na tarefa de bin-picking. </p>
+
+              <p> Apresenta-se de seguida um vídeo, sem ativação do ar comprimido, do processo até agora implementado.
+              </p>
+
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/jsgAs4YiGz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+              <!-- <center>
+                <p><img src="img/Start_plataform_orientation.png" alt="" width="140%" height="120%" /></p>
+              </center> -->
+
+
+              <!-- Pager -->
+              <div class="clearfix">
+                <a class="btn btn-primary float-left" href="post8.html">&larr;Semana anterior</a>
+                <!-- <a class="btn btn-primary float-right" href="post11.html">Proxima semana &rarr;</a> -->
+              </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/tiagoatavares/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/tiagoatavares">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/TiagoaTavares/Robonuc">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
