@@ -61,11 +61,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Week 11</h1>
-            <h2 class="subheading"> Escrita dissertação && testes e alterações das ações criadas && montagem do inversor e resolução de problemas </h2>
+            <h1>Week 12</h1>
+            <h2 class="subheading"> Escrita dissertação & Interface e ajustes & Calibrações</h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Tavares</a>
-              on May 02, 2019</span>
+              on May 10, 2019</span>
           </div>
         </div>
       </div>
@@ -77,40 +77,65 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <p> Neste semana foi dedicado mais tempo à escrita da dissertação. O estrutura da dissertação , bem como os
-            cap 1 e 2 foram entregues para revisão, e os cap 3 e 4 estão quase terminados.<p>
+          <p> Durante esta semana, foram concluídos os capítulos 3 e 4 da dissertação, bem como algumas correções
+            necessárias aos cap 1 e 2.<p>
 
-              <p>Esta semana foi efetuada a montagem/instalação do inversor de corrente de modo a dar autonomia ao nosso
-                robô móvel. Para o efeito, foi necessário uma revisão e implementação de um novo layout de modo a
-                conseguir otimizar espaço, e organizar todos os componentes. O estado final do equipamento pode ser
-                visualizado nas seguintes imagens:</p>
+              <p>Após algumas alterações, o processo global de bin-picking foi realizado com êxito, como se pode
+                visualizar na seguinte demonstração: </p>
+
+
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/NAlBgk3fB6U" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+
+              <p>Para tornar a tele-operação mais confortável para o utilizador, tentou-se criar uma interface em rqt,
+                de modo a colocar 2 janelas Rviz paralelas. Contudo, esta operação não foi possível devido a bugs
+                existentes no upload de ficheiros de configuração para cada Rviz. Desta forma, quando o sistema inicia,
+                serão lançadas 2 janelas Rviz e colocadas em paralelo no ecrã, de modo ao utilizador ter a perceção do
+                mapa global de navegação, bem como aos pormenores inerentes ao bin-picking. Esta interface foi
+                melhorada, e à medida que o processo de bin-picking avança, serão apresentadas informações ao utilizador
+                na própria janela Rviz. Apresenta-se alguns exemplos nas seguintes imagens:</p>
 
               <center>
-                <p><img src="img/nova_montagem_1.jpg" alt="" width="100%" height="100%" /></p>
+                <p><img src="img/interface_exemplo1.png" alt="" width="100%" height="100%" /></p>
               </center>
 
               <center>
-                <p><img src="img/nova_montagem_2.jpg" alt="" width="100%" height="100%" /></p>
+                <p><img src="img/interface_exemplo1.png" alt="" width="100%" height="100%" /></p>
               </center>
 
-              <p>Após a sua montagem prosseguiu-se para alguns testes de funcionamento, nos quais houve insucesso.
-                Detetou-se que durante a montagem houve danificação do circuito elétrico necessário à aquisição do laser
-                1D presente no gripper do manipulador.</p>
+              <p>Iniciou-se a calibração total do sistema: Primeiro, constatou-se que a tf tree (quando o processo total
+                é executado) era na verdade duas tf tree’s, ou seja havia falta de transformações de modo a conectar os
+                referenciais existentes. A resolução deste problema, consistiu na calibração do laser frontal com o
+                manipulador.
 
-              <p>Após a sua resolução, percebeu-se que o inversor de corrente teria influencia na alimentação de um
-                laser 2D presente na plataforma, ou seja caso o inversor esteja ligado o laser não cumpre as suas
-                funções. Não se percebe bem a causa da corrente uma vez que não existe variação de tensão, nem de
-                corrente quando existe comuta de estado do inversor. Uma vez que estas medições foram realizadas com um
-                multímetro as variações de amperagem podem não ser percetíveis. De modo a solucionar o problema, irá ser
-                aplicado um conversor de corrente de modo a alimentar o laser pela saída do inversor. </p>
+                Uma vez que o laser presente na ponta do manipulador tem alguns graus de liberdade, realizou-se a sua
+                calibração face ao end effector. Para perceção de ângulos de rotação, colocou-se o laser perpendicular à
+                bancada, e com um movimento do manipulador linear em Z , mediu-se o desfasamento face ao ponto inicial.
+                Para a perceção das translações segundo os eixos X e Y colocou-se uma caneta na ponta do manipulador,
+                como se pode ver na seguinte figura: </p>
 
-              <p> Contudo, foram realizados alguns testes e algumas alterações no processo de “auto-picking”, sendo já
-                possível o cancelamento de movimento na tarefa de bin-picking. </p>
+              <center>
+                <p><img src="img/laser_calib.jpg" alt="" width="100%" height="100%" /></p>
+              </center>
 
-              <p> Apresenta-se de seguida um vídeo, sem ativação do ar comprimido, do processo até agora implementado.
-              </p>
+              <p> Posto isto, uma vez que o processo de Bin-Picking tem alguns erros associados, inciou-se a calibração
+                da kinect. Realizou-se inicialmente algumas calibrações extrínsecas das quais não apresentaram bons
+                resultados. Uma vez que a deteção do aruco necessária à calibração extrínseca apresentava algum erro,
+                achou-se por bem, realizar também a calibração intrínseca de ambas as camaras (stereo e monocular) .
+                Estas calibrações necessitam de ser repetidas com mais cuidado, visto que o problema não foi resolvido.
+                Apresenta-se uma imagem do processo de calibração intrínseca:</p>
 
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/jsgAs4YiGz0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+              <center>
+                <p><img src="img/calibração_intrinseca_malFeita.png" alt="" width="100%" height="100%" /></p>
+              </center>
+
+              <p> Durante esta semana, realizou-se também a instalação do ubuntu 18.04 e do ROS melodic no mini-Pc, bem
+                como os packages desenvolvidos e necessários ao ROBONUC. Desta forma, será necessário, na próxima
+                semana, testar a sua performance .</p>
+
 
               <!-- <center>
                 <p><img src="img/Start_plataform_orientation.png" alt="" width="140%" height="120%" /></p>
@@ -119,8 +144,8 @@
 
               <!-- Pager -->
               <div class="clearfix">
-                <a class="btn btn-primary float-left" href="post9.html">&larr;Semana anterior</a>
-                <a class="btn btn-primary float-right" href="post12.html">Proxima semana &rarr;</a>
+                <a class="btn btn-primary float-left" href="post11.html">&larr;Semana anterior</a>
+                <!-- <a class="btn btn-primary float-right" href="post13.html">Proxima semana &rarr;</a> -->
               </div>
         </div>
       </div>
