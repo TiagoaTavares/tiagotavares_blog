@@ -61,12 +61,12 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
-            <h1>Week 13 e 14</h1>
-            <h2 class="subheading"> Calibrações & Escrita da dissertação & Funcionamento Mini-Pc por ssh & Inicio do
-              estudo da cinemática integrada</h2>
+            <h1>Week 15</h1>
+            <h2 class="subheading"> Continuação do estudo da cinemática integrada & Implementação e testes de 2 modelos
+              de cinemática em MATLAB & Inicio de escrita do capitulo 7 </h2>
             <span class="meta">Posted by
               <a href="about.html">Tiago Tavares</a>
-              on May 23, 2019</span>
+              on May 30, 2019</span>
           </div>
         </div>
       </div>
@@ -79,38 +79,54 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <b>Semana 13 </b>
-          <p> Os processos de calibração (intrínseca e extrínseca) da câmara foram repetidos algumas vezes, de modo a
-            diminuir a ocorrência de erros durante o processo de bin-picking. Como o processo de melhoramento estagnou
-            depois de alguns dias de tentativas, não foi possível atingir a ‘’perfeição’’ e achou-se por bem avançar nas
-            tarefas. </p>
+          <p> Esta semana foi dedicada exclusivamente ao ultimo capítulo da dissertação: “Cinemática Integrada”. Foi
+            necessário estudar o funcionamento de ferramentas utilizadas até ao momento (e novas), de forma a perceber a
+            possibilidade de implementação de um modelo cinemático integrado para o manipulador móvel real (ROBONUC).
+          </p>
 
-          <p> Durante esta semana, foi também, concluído o capitulo 5 e iniciado o capitulo 6 da dissertação. </p>
+          <p> De modo a perceber a problemática e iniciar uma formulação de um modelo cinemático procedeu-se à analise
+            da literatura referente a manipuladores móveis. Salienta-se a dificuldade de encontrar referencias a
+            questões fundamentais da cinemática. </p>
 
-          <b>Semana 14 </b>
-
-          <p>Após a calibração de todo o sistema, foi realizada a instalação do mini-pc no robô, e testado a sua
-            performance. Para o efeito, foi necessário criar novos launch’s files de modo a lançar os nós relativos à
-            interface e ao tele-controlo no pc do utilizador, e todos os restantes no mini-pc da plataforma. De modo a
-            estabelecer a comunicação entre máquinas, foi utilizado o protocolo ssh através da rede wi-fi (local) do
-            robô, e as ferramentas (do ROS) disponibilizadas para a utilização do ROS distribuído.
-            Contudo, a performance do processo foi bastante reduzida devido à elevada taxa de informação em circulação,
-            resultando numa interface demasiado lenta.</p>
+          <p>Posteriormente, formulou-se dois modelos de cinemática integrada. A primeira abordagem teve em conta a
+            cinemática de um robô móvel com cinemática diferencial com a cinemática tradicional de um manipulador
+            robótico. Para a segunda admitiu-se que a plataforma poderia ser representada por uma junta rotacional
+            seguida de uma junta prismática, e assim trabalhar a cinemática integrada como um manipulador tradicional
+            (com 8 juntas).</p>
 
 
-          <p> O capitulo 6 foi foi concluído e iniciou-se o novo estudo teórico sobre a possibilidade de implementação
-            da cinemática integrada do sistema </p>
+          <p> Apresenta-se na imagem seguinte, parte do código onde é possível visualizar do lado esquerdo a abordagem
+            1, e do lado direito a abordagem 2. Após o calculo do Jacobiano associado a cada um das abordagens,
+            utilizou-se o modelo de cinemática diferencial para ir de um Ponto incial para um Ponto final (em
+            coordenadas cartesianas) e assim saber a sequencia de configuração das juntas entre esses dois pontos. </p>
 
 
-          <!-- <center>
-                <p><img src="img/Start_plataform_orientation.png" alt="" width="140%" height="120%" /></p>
-              </center> -->
+          <center>
+            <p><img src="img/cinematica_1.png" alt="" width="150%" height="150%" /></p>
+          </center>
+          
+
+          <p> O resultado da simulação pode ser visualizado nas seguintes imagens: </p>
+
+          <b>Caminho percorrido ('o' representam o centro da plataforma móvel, e os '*' a posição do end effector)</b>
+          <center>
+            <p><img src="img/cinematica_2.png" alt="" width="150%" height="150%" /></p>
+          </center>
+
+          <b>Posição final</b>
+          <center>
+            <p><img src="img/cinematica_3.png" alt="" width="150%" height="150%" /></p>
+          </center>
+
+          <p>Nesta semana iniciou-se também, a escrita do presente capítulo (cap7).</p>
+
+
 
 
           <!-- Pager -->
           <div class="clearfix">
             <a class="btn btn-primary float-left" href="post12.html">&larr;Semana anterior</a>
-            <a class="btn btn-primary float-right" href="post15.html">Proxima semana &rarr;</a>
+            <!-- <a class="btn btn-primary float-right" href="post15.html">Proxima semana &rarr;</a> -->
           </div>
         </div>
       </div>
