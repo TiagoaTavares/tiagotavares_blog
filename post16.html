@@ -79,46 +79,44 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
 
-          <p> Esta semana foi dedicada exclusivamente ao ultimo capítulo da dissertação: “Cinemática Integrada”. Foi
-            necessário estudar o funcionamento de ferramentas utilizadas até ao momento (e novas), de forma a perceber a
-            possibilidade de implementação de um modelo cinemático integrado para o manipulador móvel real (ROBONUC).
+          <p> Esta semana foi dedicada, maioritariamente, à escrita da dissertação: agradecimentos, resumo/abstract,
+            conclusões e trabalho futuro, bem como a conclusão do capítulo 7 (‘’Cinemática integrada’’) .
           </p>
 
-          <p> De modo a perceber a problemática e iniciar uma formulação de um modelo cinemático procedeu-se à analise
-            da literatura referente a manipuladores móveis. Salienta-se a dificuldade de encontrar referencias a
-            questões fundamentais da cinemática. </p>
+          <p> Para além do que já foi referido no blog, durante esta semana foi introduzido, no cap.7, o conceito de
+            manipulabilidade e foram obtidos gráficos da sua evolução ao longo da trajétoria. Simultaneamente, foi
+            introduzida mais uma trajetória para a analise dos modelos cinemáticos propostos , na qual o objetivo era
+            simular uma pintura de uma onda sinosoidal numa parede de 5m.</p>
 
-          <p>Posteriormente, formulou-se dois modelos de cinemática integrada. A primeira abordagem teve em conta a
-            cinemática de um robô móvel com cinemática diferencial com a cinemática tradicional de um manipulador
-            robótico. Para a segunda admitiu-se que a plataforma poderia ser representada por uma junta rotacional
-            seguida de uma junta prismática, e assim trabalhar a cinemática integrada como um manipulador tradicional
-            (com 8 juntas).</p>
+          <p>Apresenta-se as representações ilustrativas de cada movimento:</p>
 
 
-          <p> Apresenta-se na imagem seguinte, parte do código onde é possível visualizar do lado esquerdo a abordagem
-            1, e do lado direito a abordagem 2. Após o calculo do Jacobiano associado a cada um das abordagens,
-            utilizou-se o modelo de cinemática diferencial para ir de um Ponto incial para um Ponto final (em
-            coordenadas cartesianas) e assim saber a sequencia de configuração das juntas entre esses dois pontos. </p>
+          <b>Abordagem 1</b>
+          <center>
+            <p><img src="img/exp2_ab1_400_afastado.jpg" alt="" width="150%" height="150%" /></p>
+          </center>
+
+
+
+          <b>Abordagem 2</b>
+          <center>
+            <p><img src="img/exp2_ab2_400_afastado.jpg" alt="" width="150%" height="150%" /></p>
+          </center>
+
+
+          <p> Contudo, constatou-se que a utilização da generalização do conceito de manipulabilidade de manipuladores
+            fixos para manipuladores móveis não é apropriada. Deste modo optou-se por analisar a manipulabilidade do
+            braço robótico ao longo da trajetória ao invés do sistema total.
+
+            A abordagem anterior, utilizada para o cálculo do jacobiano , revelou-se não funcional para os termos de
+            descrição das velocidades angulares. Assim, foi necessário reformular a metodologia de obtenção do
+            jacobiano, utilizando outra abordagem:</p>
 
 
           <center>
-            <p><img src="img/cinematica_1.png" alt="" width="150%" height="150%" /></p>
-          </center>
-          
-
-          <p> O resultado da simulação pode ser visualizado nas seguintes imagens: </p>
-
-          <b>Caminho percorrido ('o' representam o centro da plataforma móvel, e os '*' a posição do end effector)</b>
-          <center>
-            <p><img src="img/cinematica_2.png" alt="" width="150%" height="150%" /></p>
+            <p><img src="img/abordagem_jacobiano_manipulador.png" alt="" width="150%" height="150%" /></p>
           </center>
 
-          <b>Posição final</b>
-          <center>
-            <p><img src="img/cinematica_3.png" alt="" width="150%" height="150%" /></p>
-          </center>
-
-          <p>Nesta semana iniciou-se também, a escrita do presente capítulo (cap7).</p>
 
 
 
@@ -126,7 +124,7 @@
           <!-- Pager -->
           <div class="clearfix">
             <a class="btn btn-primary float-left" href="post12.html">&larr;Semana anterior</a>
-            <a class="btn btn-primary float-right" href="post16.html">Proxima semana &rarr;</a>
+            <!-- <a class="btn btn-primary float-right" href="post15.html">Proxima semana &rarr;</a> -->
           </div>
         </div>
       </div>
